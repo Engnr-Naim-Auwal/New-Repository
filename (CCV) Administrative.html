@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CCV Administrative</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f6f9;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    .main{
+      background-color: white;
+      color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+    
+    
+/* ##### loging page and progress ##### */
+
+            #welcome {
+            flex-direction: column;
+            align-itemss: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+            color: #333333;
+            display: none;
+        }
+
+        #welcome h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #welcome p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .progress-container {
+            width: 80%;
+            max-width: 500px;
+            background-color: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background: linear-gradient(to right, #4caf50, #81c784);
+            transition: width 0.5s ease;
+        }
+        
+    .pass-container {
+      background-color: #3b8d99;
+      color: black;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      width: 350px;
+      height: 450px;
+      padding: 30px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h4{
+      margin-top: -4%;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+      margin-bottom: 0px;
+    }
+
+    .card h3 {
+      font-size: 26px;
+      color: red;
+      margin-bottom: 0px;
+    }
+
+    .card .title h2 {
+      font-size: 22px;
+      color: #3b8d99;
+      margin-bottom: 20px;
+    }
+
+    .card #pass {
+      border: 2px solid #3b8d99;
+      border-radius: 6px;
+      height: 50px;
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .card button {
+      color: white;
+      background-color: #3b8d99;
+      border-radius: 6px;
+      width: 100%;
+      height: 50px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .card button:hover {
+      background-color: #2c6e72;
+    }
+
+    .card p {
+      color: #ff4d4d;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    
+    /*main....................*/
+    /*header and side bar......*/
+    .header{
+    background-color: #101098;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    }
+  #opn-nav{
+    color: white;
+    font-size: 25px;
+    position: fixed;
+    top: 2%;
+    left: 1%;
+  }
+  .sidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70%;
+    background-color: lightgray;
+    display: none;
+    overflow: auto;
+  }
+    .sidenav p{
+      margin-left: 3%;
+      
+  }
+  #sideC{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: black;
+    opacity: 0.5;
+  }
+  #canc{
+    color: red;
+    font-size: 60px;
+    margin-left: 75%;
+    margin-top: 5%;
+  }
+    
+    /*Security Code Generator UI*/
+    #SCG{
+      background: linear-gradient(120deg, #84fab0, #8fd3f4);
+      width: 90%;
+      height: 350px;
+      border: solid 3px green;
+      border-radius: 10px;
+      margin-left: 4%;
+      margin-top: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .prog-cont-top{
+      width: 80%;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0 auto;
+      margin-top: 2%;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    #prog-bar-top{
+      width: 100%;
+      height: 20px;
+      background: linear-gradient(to right, red, blue);
+    }
+    #gen{
+      background-color: red;
+      color: white;
+      font-size: 20px;
+      width: 200px;
+      height: 50px;
+      margin-top: 30%;
+      border-radius: 50px;
+      display: novne;
+    }
+    #generating{
+      height: 80%;
+      display: none;
+      text-align: center;
+      color: red;
+    }
+    #generating img{
+      width: 150px;
+      height: 150px;
+      margin-top: 5%;
+    }
+    .prog-cont-gen {
+            width: 80%;
+            max-width: 500px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .progress-bar-gen {
+            width: 0;
+            height: 20px;
+            background: linear-gradient(to right, black, red);
+            transition: width 0.5s ease;
+        }
+    #codeCont{
+      display: none;
+      text-align: center;
+    }
+      #code{
+        color: red;
+        font-size: 25px;
+        background-color: white;
+        border:1px solid;
+        border-radius: 20px;
+        max-width: 60%;
+        text-align: center;
+        margin: auto;
+        padding:20px;
+    }
+    #copy{
+      background-color: #3b8d99;
+      color: white;
+      margin: center;
+      margin-top: 30px;
+      width: 120px;
+      height: 50px;
+      border-radius: 30px;
+      font-size: 20px;
+    }
+    #expired{
+      height: 80%;
+      align-items: center;
+      text-align: center;
+      display: none;
+    }
+    #expired h2{
+      color:red;
+    }
+    #expired p{
+      min-height: 50px;
+      color: darkblue;
+    }
+    #sub, #help{
+     color: white;
+     background-color: red;
+     width: 80%;
+     height: 15%;
+     border-radius: 20px;
+     font-size: 20px;
+     
+    }
+    #help{
+      background-color: gray;
+      width: 40%;
+      margin-top: 30px;
+    }
+    
+    /*profile user manual and info*/
+    .P_U{
+      width: 90%;
+      padding: 1px;
+      display: flex;
+      font-size: 20px;
+      text-align: center;
+      margin: auto;
+      margin-top: 50px;
+    }
+    #prof, #user_manual{
+      background-color: darkred;
+      width: 40%;
+      border-radius: 20%;
+      margin-left: 25px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    #user_manual{
+      background-color: gray;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    .info{
+      border: 1px solid;
+      border-radius: 10px;
+      width: 95%;
+      margin-left: 2%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    /*I frames...............*/
+    .ifrm-cont{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:100%;
+      background-color: white;
+      display: none;
+    }
+    .ifrm-cont iframe{
+      width: 90%;
+      height: 90%;
+      margin-left: 5%;
+      margin-top: -10px;
+      border: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .ifrm-cont div{
+      color: black;
+      font-size: 40px;
+      margin-top: 0px;
+    }
+    
+    /*ads..............*/
+        .adds-cont {
+      border: 3px solid black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .adds-cont progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1%;
+      border-radius: 0;
+    }
+
+    .adds-cont button {
+      position: fixed;
+      top: 3%;
+      left: 90%;
+      border-radius: 40%;
+      font-size: 20px;
+      display: none; /* Initially hidden */
+    }
+
+    .adds-cont iframe {
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: none;
+    }
+
+    .adds-cont div {
+      position: fixed;
+      bottom: 1%;
+      left: 2%;
+      width: 94%;
+      padding: 5px;
+      background-color: #3030c0;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<!--main body.............-->
+<div class="main" id="main">
+  <!--header and side bar......-->
+          <div>
+  <div class="header">
+  <b>(CCV) Administrative</b>
+</div>
+<div id="opn-nav" onclick="opnNav()">&#9776;</div>
+
+<div id="sideC" onclick="CanNav()">
+<p id="canc">&times;</p>
+</div>/
+<div class="sidenav" id="sideNav">
+  <hr><p onclick="prof()">Profile</p><hr>
+  <p onclick="sub()">Subscribe</p><hr>
+  <p onclick="help()">Help</p><hr>
+  <p onclick="UM()">User Manual</p><hr>
+  <p onclick="FAQ()">FAQ</p><hr>
+  <p onclick="adds()">Adds</p><hr>
+  <p onclick="softwares()">Other Softwares</p><hr>
+  <p onclick="powersoft()">Powersoft</p><hr>
+  <p onclick="feedback()">Feedback</p><hr><br><br>
+  <a href="#" style="font-size: 20px;color: darkred; text-decoration:none; margin-left: 80px;">LOGOUT</a>
+</div>
+              
+
+<script>
+  let SN = document.getElementById("sideNav");
+  let Canc = document.getElementById("sideC");
+  
+  function opnNav() {
+  SN.style.display = "block";
+  Canc.style.display = "flex";
+}
+function CanNav(){
+  SN.style.display = "none";
+  Canc.style.display = "none";
+}
+</script>
+              </div>
+
+  <br><br>
+  <div id="SCG">
+    <div class="prog-cont-top">
+      <progress id="prog-bar-top" onclick="alrt()" max="0" value="0"></progress>
+    </div>
+    <script>
+      let prog = document.getElementById("prog-bar-top");
+      max = 31;
+      prog.max = max;
+      subDate = new Date('2025-1-1');
+      today = new Date();
+      let time = today - subDate;
+      const days = Math.ceil(time / (1000 * 60 * 60 * 24));
+      let value = max - days;
+      prog.value = value;
+      
+      function alrt(){
+        if(value > 3){
+          alert("{BS24001} Subscription will expire on '31/Jan/2025'");}
+          else if(value > 0){
+            alert("Warning!!, " + value + " day(s) to expire");}
+            else if(value === 0){
+              alert("Subscription Expiring today");}
+          else{
+            alert("{BS23001} Subscription has expired");}
+          }
+    </script>
+    
+    <center><button id="gen" onclick="gen()">
+      <b>Generate</b>
+    </button></center>
+    <div id="generating">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLAFniPCjCMatOPQx6b3Z7bswRswQ3n39NyToJ2yFJzMyvtD6ZA2WMFABas0kUNMpbkAbZrlkixp4Ei2AOiGcc4aujuNNwk_EuTPNIPab1Ugzv7PYhta3s_NAj1ZlX477uXLn-TAiHk4dHmOBxWmVJyj_ZLUjjN8Z5UypdKueeQ9TpbD4VUvJCEoUuOr0/s414/Screenshot_2024-11-30-18-25-59-313_com.canva.editor.png" alt="gen">
+      <div class="prog-cont-gen">
+        <div class="progress-bar-gen" id="genProg"></div>
+      </div>
+        <p>
+          {WPE/BNS/24006}<br>Security Code Generating Please Wait................
+        </p>
+    </div>
+    <script>
+      function gen(){
+        document.getElementById("gen").style.display = "none";
+        
+        let generating = document.getElementById("generating");
+        generating.style.display= "block"
+        
+            let progressBar = document.getElementById("genProg");
+        let progress = 0;
+
+        function loadProgress() {
+            if (progress < 100) {
+                progress += 1;
+                progressBar.style.width = progress + '%';
+                setTimeout(loadProgress, 100); // Adjust speed by changing the time (ms)
+            } else {
+              generating.style.display = "none";
+              document.getElementById("codeCont").style.display = "block"
+            }
+        }
+        loadProgress();
+      }
+    </script>
+    <div id="codeCont"><br>
+      <h3>Security Code</h3>
+    <p id="code"><strong><i>Loding..........</i></strong></p>
+    <center><button id="copy" onclick="copy()">
+      Copy
+    </button></center>
+    </div>
+    
+    <script>
+    function copy() {
+      // Get the text from the paragraph
+      const textToCopy = document.getElementById("code").innerText;
+
+      // Copy the text to clipboard
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          alert("Security Code copied to clipboard!");
+        })
+        .catch(err => {
+          console.error("Failed to copy text: ", err);
+        });
+    }
+  </script>
+  
+  
+    <div id="expired">
+      <h2>&times&times EXPIRED!!! 
+      &times&times</h2>
+      <p>desc........</p>
+      <button id="sub" onclick="sub()">
+        Subcribe
+      </button>
+      <button id="help" onclick="help()">
+        help
+      </button>
+    </div>
+    <script>
+      if (value < 0){
+        document.getElementById("gen").style.display = "none";
+        document.getElementById("expired").style.display = "block";
+      }
+    </script>
+  </div>
+  <div class="P_U">
+    <button id="prof" onclick="prof()">
+      <h3 style="color: white;">PROFILE</h3>
+    </button>
+    <button id="user_manual" onclick="UM()">
+        <h3 style="color: white;">USER MANUAL</h3>
+    </button>
+  </div>
+  <div class="info">
+  <h2>User Phone Information</h2>
+  <div>
+    <p><strong>Device Information:</strong></p>
+    <p id="deviceInfo"></p>
+    <p><strong>Browser Information:</strong></p>
+    <p id="browserInfo"></p>
+    <p><strong>Screen Information:</strong></p>
+    <p id="screenInfo"></p>
+  </div>
+  <script src="script.js"></script>
+  </div>
+
+<script>
+// Get the device information
+const deviceInfo = {
+    userAgent: navigator.userAgent,
+    platform: navigator.platform,
+    language: navigator.language,
+};
+
+// Get the browser information
+const browserInfo = {
+    appName: navigator.appName,
+    appVersion: navigator.appVersion,
+    vendor: navigator.vendor,
+};
+
+// Get screen information
+const screenInfo = {
+    screenWidth: screen.width,
+    screenHeight: screen.height,
+    colorDepth: screen.colorDepth,
+};
+
+// Display the information on the web page
+document.getElementById('deviceInfo').innerHTML = `
+    User Agent: ${deviceInfo.userAgent}<br>
+    Platform: ${deviceInfo.platform}<br>
+    Language: ${deviceInfo.language}
+`;
+
+document.getElementById('browserInfo').innerHTML = `
+    App Name: ${browserInfo.appName}<br>
+    App Version: ${browserInfo.appVersion}<br>
+    Vendor: ${browserInfo.vendor}
+`;
+
+document.getElementById('screenInfo').innerHTML = `
+    Screen Width: ${screenInfo.screenWidth}px<br>
+    Screen Height: ${screenInfo.screenHeight}px<br>
+    Color Depth: ${screenInfo.colorDepth}-bit
+`;
+</script>
+  
+  
+  <!--I frames.................-->
+               <div>
+  <div class="ifrm-cont" id="ifrm-cont">
+    <div onclick="canc()"><b>←</b></div><br>
+    <iframe class="ifrm" id="ifrm"></iframe>
+  </div>
+  <script>
+      let ifrm_cont = document.getElementById("ifrm-cont");
+      let ifrm = document.getElementById("ifrm");
+      function canc() {
+      ifrm_cont.style.display = "none";
+      document.getElementById("ifrm-cont-P").style.display = "none";
+    }
+    //subscribe............
+    function sub() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "https://selar.co/WPS_Exgramming@Subs?embed";
+    }
+    //help.................
+    function help() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+    }
+    //profile.................
+    function prof() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+    }
+    //user guide.............
+    function UM() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+    }
+      //FAQ.................
+      function FAQ() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+      }
+      //Adds...................
+      function adds() {
+      adContainer.style.display = "block";
+      ad1.style.display = "block";
+        startProgress();
+      }
+      //softwares..............
+      function softwares() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+      }
+      //powersoft..............
+      function powersoft() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+      }
+      //feedback...............
+      function feedback() {
+      ifrm_cont.style.display = "block";
+      ifrm.src = "";
+      }
+  </script>
+                  </div>
+  
+  </div>
+  
+  
+  <!--progressing page.........-->
+    <div id="welcome">
+    <h1>CCV Administrative</h1>
+    <p>Loading your experience, please wait...</p>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+  
+  <!--loging page-->
+             <div>
+  <div class="pass-container" id="passCont">
+    <div class="card">
+      <h4>WELCOME BACK!!</h4>
+      <center>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLAFniPCjCMatOPQx6b3Z7bswRswQ3n39NyToJ2yFJzMyvtD6ZA2WMFABas0kUNMpbkAbZrlkixp4Ei2AOiGcc4aujuNNwk_EuTPNIPab1Ugzv7PYhta3s_NAj1ZlX477uXLn-TAiHk4dHmOBxWmVJyj_ZLUjjN8Z5UypdKueeQ9TpbD4VUvJCEoUuOr0/s414/Screenshot_2024-11-30-18-25-59-313_com.canva.editor.png" alt="logo">
+      </center>
+      <h3>WPS Exgramming</h3>
+      <div class="title">
+        <h2>Chindo Communication Ventures</h2>
+      </div>
+      <input type="password" id="pass" placeholder="Enter Password" required>
+
+      <button onclick="log()"><b>LOGIN</b></button>
+      <p onclick="forgPass()">Forgot Password?</p>
+      <div class="ifrm-cont" id="ifrm-cont-P">
+    <div style="margin-left:-320px;" onclick="canc()"><b>←</b></div><br>
+    <iframe style="margin-left:0px;" class="ifrm" id="ifrm-P"></iframe>
+  </div>
+    </div>
+  </div>
+
+  <script>
+    //forgot password.........
+    function forgPass() {
+      document.getElementById("ifrm-cont-P").style.display = "block";
+      document.getElementById("ifrm-P").src = "";
+    }
+    //check password
+    function log() {
+           
+      var pasC = document.getElementById("passCont");
+      var welcome = document.getElementById("welcome")
+
+      var pass = document.getElementById("pass").value;
+      
+      document.getElementById("pass").value = '';
+
+        if (pass == 2171){
+
+            pasC.style.display = "none";
+            welcome.style.display = "flex";
+            let progressBar = document.getElementById("progressBar");
+        let progress = 0;
+
+        function loadProgress() {
+            if (progress < 100) {
+                progress += 1;
+                progressBar.style.width = progress + '%';
+                setTimeout(loadProgress, 50); // Adjust speed by changing the time (ms)
+            } else {
+              welcome.style.display = "none";
+              adContainer.style.display = "block";
+      ad1.style.display = "block";
+        startProgress();
+              document.getElementById("main").style.display = "block"
+            }
+        }
+
+        // Start loading animation
+        loadProgress();
+        }
+
+            else if(pass == 21716994){
+
+              pasC.style.display = "none";
+              welcome.style.display = "none";
+              document.getElementById("main").style.display ="block"
+            }
+
+          else{
+
+            alert("Invalid password");
+            
+          }
+      
+      }
+  
+        
+    </script>
+    </div>
+    
+  
+<!--Security Generator Tabble and script-->
+             <div>
+<table style="display:none">
+    <thead>
+      <tr>
+        <th>No</th><th>Upper</th><th>Lower</th><th>Character</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>0</td><td>H</td><td>a</td><td>@</td></tr>
+      <tr><td>1</td><td>I</td><td>b</td><td>#</td></tr>
+      <tr><td>2</td><td>J</td><td>c</td><td>%</td></tr>
+      <tr><td>3</td><td>DK</td><td>d</td><td>&</td></tr>
+      <tr><td>4</td><td>L</td><td>e</td><td>@</td></tr>
+      <tr><td>5</td><td>M</td><td>f</td><td>#</td></tr>
+      <tr><td>6</td><td>N</td><td>g</td><td>%</td></tr>
+      <tr><td>7</td><td>O</td><td>h</td><td>&</td></tr>
+      <tr><td>8</td><td>P</td><td>i</td><td>@</td></tr>
+      <tr><td>9</td><td>Q</td><td>j</td><td>#</td></tr>
+    </tbody>
+  </table>
+
+<script>
+  let SGN = "192837465085201" ;
+  let BN = "8364858457" ;
+  let ref = "74275" ;
+  
+  //info...........
+  let info = BN + ref + SGN ;
+  let x = parseInt(info.substring(0, 15));
+        console.log(x);
+        let y = parseInt(info.substring(info.length - 15));
+        console.log(y);
+        let z = parseInt(info.substring(9, 19));
+        console.log(z);
+        let num = 1133557799;
+  let sum = x + y + z + num;
+  let gen_Info = sum.toString().substring(0, 15);
+        console.log(gen_Info);
+        
+        //today...........
+        let today = Math.ceil((new Date().getTime() + 3600000)/(1000*60*60*24)+25568);
+        let P_today = Math.pow(today, 3);
+  
+  let genI_T = P_today + parseInt(gen_Info);
+  let Gen = genI_T.toString().substring(2, 12);
+  //lookup.................
+  let a1 = Gen.substring(1,2);
+  let a2 = Gen.substring(3,4);
+  let a3 = Gen.substring(5,6);
+  let a4 = Gen.substring(7,8);
+  
+  const rows = document.querySelectorAll("table tr"); // Select all rows
+      
+
+      rows.forEach((row, index) => {
+        if (index > 0 && row.cells[0].textContent === a1) { // Skip header row
+        
+          r1 = row.cells[1].textContent; // Get the value from the second column
+        }
+      });
+      
+      rows.forEach((row, index) => {
+        if (index > 0 && row.cells[0].textContent === a2) {
+          r2 = row.cells[2].textContent;
+        }
+      });
+      
+      rows.forEach((row, index) => {
+        if (index > 0 && row.cells[0].textContent === a3) {
+          r3 = row.cells[3].textContent;
+        }
+      });
+      
+      rows.forEach((row, index) => {
+        if (index > 0 && row.cells[0].textContent === a4) {
+          r4 = row.cells[1].textContent;
+        }
+      });
+  
+  let generated = Gen.substring(0,3) + r1 + r2 + Gen.substring(4, 6) + r3 + r4 + Gen.substring(8, 10) ;
+  
+  document.getElementById("code").innerHTML = generated
+</script>
+             </div>
+
+
+<!--Adds........................-->
+             <div>
+    <div class="adds-cont" id="ad-container">
+    <progress id="progress-bar" max="100" value="100"></progress>
+    <button id="cancel-button1" onclick="cancelAd1()"> &times;</button>
+    
+    <button id="cancel-button2" onclick="cancelAd2()"> &times;</button>
+    <button id="cancel-button3" onclick="cancelAd3()"> &times;</button>
+    
+    <iframe id="ad1" src="#?embed"></iframe>
+    <iframe id="ad2" src="#?embed"></iframe>
+    <iframe id="ad3" src="#?embed"></iframe>
+    
+  </div>
+  
+  <script>
+    
+    const progressBar = document.getElementById("progress-bar");
+    const adContainer = document.getElementById("ad-container");
+    
+    const ad1 = document.getElementById("ad1");
+    const ad2 = document.getElementById("ad2");
+    const ad3 = document.getElementById("ad3");
+    
+    const cancelButton1 = document.getElementById("cancel-button1");
+    const cancelButton2 = document.getElementById("cancel-button2");
+    const cancelButton3 = document.getElementById("cancel-button3");
+    let progress = 100, interval;
+
+    
+    // Function to start the progress bar
+    function startProgress() {
+      progress = 100;
+      
+      interval = setInterval(() => {
+        if (progress <= 0) {
+          clearInterval(interval);
+          
+          cancelButton1.style.display = "block";
+        }
+          else {
+          progress -= 1;
+          progressBar.value = progress;
+        }
+      }, 10); // Decrease every 100ms
+    }
+
+    function cancelAd1() {
+     ad2.style.display = "block";
+     ad1.style.display = "none";
+     cancelButton1.style.display = "none";
+     
+        progress = 100;
+      interval = setInterval(() => {
+        if (progress <= 0) {
+          clearInterval(interval);
+
+          cancelButton2.style.display = "block";
+        }
+          else {
+          progress -= 1;
+          progressBar.value = progress;
+        }
+      }, 10); // Decrease every 100ms
+    }
+    
+    function cancelAd2() {
+     ad3.style.display = "block";
+     ad2.style.display = "none";
+     cancelButton2.style.display = "none";
+      
+        progress = 100;
+      interval = setInterval(() => {
+        if (progress <= 0) {
+          clearInterval(interval);
+          
+          cancelButton3.style.display = "block";
+        }
+          else {
+          progress -= 1;
+          progressBar.value = progress;
+        }
+      }, 10); // Decrease every 100ms
+    }
+    
+    function cancelAd3() {
+      adContainer.style.display = "none";
+      cancelButton3.style.display = "none";
+    }
+    
+  </script>
+             </div>
+
+</body>
+</html>
