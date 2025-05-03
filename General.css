@@ -1,0 +1,266 @@
+
+/*header & sidebar*/
+  .gen .header{
+    background: linear-gradient(10deg, #0054e3, #75f9a6);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+    height:5.5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .gen .header a {
+      text-decoration: none;
+      color: white;
+    }
+    .gen #logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      position: fixed;
+      top: 3px;
+      left: 3%;
+    }
+  .gen #opn-nav, #canc{
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    top: 0%;
+    right: 4%;
+  }
+  .gen #canc{
+    top: -5;
+    font-size: 40px;
+    box-shadow: 4px 8px 30px 1px #696363;
+    height: 7.5%;
+    display: none;
+  }
+  .gen #btn {
+    background: linear-gradient(10deg, #0054e3, #75f9a6);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 4px 4px 10px 1px gray;
+  }
+  .gen #btn img {
+    width: 50px;
+    height: 50px;
+  }
+  .gen .sidenav{
+    position: fixed;
+    top: 7.5%;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background: linear-gradient(10deg, #c1d7fd, #ecfef3);
+    font-size: 18px;
+    overflow: auto;
+    transition: 1s ease;
+  }
+  .gen .sidenav .share-cont {
+    position: absolute;
+    right:50px;
+    display: flex;
+    width: 25%;
+    height: 30px;
+    margin-top: 20px;
+  }
+  .gen .sidenav .share {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: auto;
+  }
+  .gen .sidenav .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  }
+  .gen .sidenav l {
+    position: absolute;
+    margin-left: 10%;
+  }
+  .gen .sidenav p{
+    margin-left: 5%;
+    color: #0054e3;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gen .sidenav details{
+    margin-left: 5%;
+    color: #0054e3;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gen .sidenav p::after {
+    content: "\276F";
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .gen summary  {
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      outline: none;
+      font-weight: bold;
+      margin-top: 5%;
+  }
+  .gen summary::-webkit-details-marker {
+    display: none;
+  }
+  .gen summary::after {
+    content: "\276F";
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: 1s ease;
+    margin-right: 10px;
+  }
+  .gen .sidenav details[open] summary::after {
+    transform: rotate(270deg);
+    color: #8c0505;
+    margin-right: 30px;
+  }
+  .gen .sidenav details[open] {
+    transition: 3s ease;
+  }
+  .gen .sidenav a {
+    text-decoration: none;
+  }
+  .gen .sidenav p:hover {
+    background-color: #c9c7c7;
+    color: red;
+    transition: 0.3s;
+  }
+  .gen .pwsft{
+    width: 170px;
+    height: 30px;
+    margin-left: 30%;
+    border-radius: 10px;
+    border:border-radius;
+    box-shadow: 0px 4px 20px #8c8484;
+  }
+  .gen #sideC{
+    position: fixed;
+    top: 0%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: black;
+    opacity: 0.3;
+  }
+  .gen .container{
+    width: 100%;
+    height: 95%;
+    margin-top: 13%;
+    margin-left: 0;
+  }
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    left: 0px;
+    margin-top: 30%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  footer a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    margin: 0 10px;
+    padding: 0;
+  }
+
+  footer a:hover {
+    color: red;
+  }
+
+  .footer-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  .footer-logo img {
+    width: 170px; /* Adjust size as needed */
+    height: 30px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px #5b5757;
+  }
+  .privacy {
+    color: #f5c857;
+    text-decoration: underline;
+  }
+  #up {
+    position: fixed;
+    bottom: 7%;
+    left: 10%;
+    font-size: 10px;
+    background-color: #0e47a7;
+    color: white;
+    padding: 10px;
+    padding-top: 13.5px;
+    padding-bottom: 13.5px;
+    text-decoration: none;
+    border-radius: 100px;
+  }
+  
+  /* Search......*/
+  .search-box {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #0e47a7;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    box-shadow: 4px 4px 10px 1px silver;
+  }
+  .no-result {
+    display: none;
+    color: red;
+    margin-bottom: 35%;
+  }
+  /* filters.....*/
+  .hidden { display: none;
+    
+  }
+  .filters {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+  }
+  .filters select {
+    background-color: #fdea82;
+    margin: 5px;
+    border-radius: 15px;
+    margin-top: 15%;
+    padding: 5px;
+    outline: none;
+  }
