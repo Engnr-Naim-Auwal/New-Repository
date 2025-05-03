@@ -19,7 +19,7 @@
     cancNav.innerHTML = "&#9776;";
     cancNav.onclick = closeNav;
 
-    logo.innerHTML = `<a href="activities.html"><img src="images/logo.png" alt="logo"></a>`;
+    logo.innerHTML = `<a href="activities.html"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDqFNSR67H2UNajSyzd7l2cPgMv2vTYdOcsHwbOgRjuAb273KdIGlMqV5BzC9Vs08-20Q4hrqaQZ-jAy6DUMBZTvmi8aL_tD-xwfnT9PDD-66tLQV1LPo02YTCW4_BSY34uVOv7TPS1FyXt8944gu8JxYMG3wu_33Fd61ynVH26EJqUNtMMEg32scGzMY/s1600/images%20(3).jpeg" alt="logo"></a>`;
 
     contactBtn.innerHTML = `<a href="contact.html"><img src="icon/contact1.png" alt="contact"></a>`;
 
